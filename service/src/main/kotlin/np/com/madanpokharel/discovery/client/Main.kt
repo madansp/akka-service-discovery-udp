@@ -7,7 +7,7 @@ import java.net.InetSocketAddress
 
 fun main() {
     val actorSystem = ActorSystem.create("AkkaUDPDiscoveryClient")
-    val config = actorSystem.settings().config().getConfig("service-discovery-client")
+    val config = actorSystem.settings().config().getConfig("service-discovery-service")
     val remoteInet = InetSocketAddress(
             InetAddress.getByName(config.getString("udp-multicast-address")!!),
             config.getInt("udp-multicast-port")
